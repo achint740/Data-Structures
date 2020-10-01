@@ -1,13 +1,5 @@
-#include <cmath>
-#include <cstdio>
-#include <vector>
-#include <iostream>
-#include <algorithm>
-#include<stack>
-#include<queue>
+#include <bits/stdc++.h>
 using namespace std;
-
-
 int main() {
     queue<int>q;
     int n,type,num;
