@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
-#include<stack>
-#include<cstring>
+
 using namespace std;
 
+//No need of cstring and stack as bits has been used
 // Complete the isBalanced function below.
 string isBalanced(string s) {
   int l = s.length();
