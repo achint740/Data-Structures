@@ -1,17 +1,16 @@
 #include <bits/stdc++.h>
-#include<stack>
-#include<cstring>
-using namespace std;
 
+using namespace std;
+//The changes made by great Varun are inevitable. Bid Adieu!!
 // Complete the isBalanced function below.
 string isBalanced(string s) {
   int l = s.length();
 
     stack<char>q;
 
-    int  c = 0;
+    int  c = 0 , i=0;
 
-    for(int i=0;i<l;i++)
+    while(i<l)
     {
         if(s[i]=='(' || s[i]=='{' || s[i]=='[')
             q.push(s[i]);
@@ -31,26 +30,6 @@ string isBalanced(string s) {
                          break;
                      }
             }
-            else
-            {
-                c--;
-                break;
-            }
-        }
-        else if(s[i]=='}')
-        {
-            if(!q.empty())
-                {
-                    if(q.top()=='{'){
-                       q.pop();
-                    continue;
-                    }
-                     else
-                     {
-                         c--;
-                         break;
-                     }
-                }
             else
             {
                 c--;
@@ -79,8 +58,30 @@ string isBalanced(string s) {
                 break;
             }
         }
+        else if(s[i]=='}')
+        {
+            if(!q.empty())
+                {
+                    if(q.top()=='{'){
+                       q.pop();
+                    continue;
+                    }
+                     else
+                     {
+                         c--;
+                         break;
+                     }
+                }
+            else
+            {
+                c--;
+                break;
+            }
         }
-     if(c==0 && q.empty())
+        
+      i++;
+        }
+     if(q.empty()&&c==0)
             return "YES";
      else
           return "NO";
@@ -96,7 +97,7 @@ int main()
 
     for (int t_itr = 0; t_itr < t; t_itr++) {
         string s;
-        getline(cin, s);
+        cin>>s;
 
         string result = isBalanced(s);
 
