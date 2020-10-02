@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+// c++ code
 int MinDist(int rb1_pos,int rb2_pos,int a[][2],int i,int n,map<pair<int,pair<int,int> >,int>dp){
     if(i==n){
       return 0;
