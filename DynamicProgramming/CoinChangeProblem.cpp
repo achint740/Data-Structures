@@ -7,8 +7,9 @@ long long int bottomUP(int *a,int n,int m){
     for(int j=0;j<m;j++){
         coins[0][j]=1;
     }
-    // i refers to current amt
-    //j refers to index of coin being used
+    /* i refers to current amt
+    j refers to index of coin being used
+    */
     for(int i=1;i<n+1;i++){
         for(int j=0;j<m;j++){
             long long int include_ways=0,exclude_ways=0;
